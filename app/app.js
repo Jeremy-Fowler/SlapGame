@@ -6,29 +6,35 @@ let hits = 0
 
 // Functions
 
-function slap(){
-    health -= 1
-    hits++
-    update()
+// function slap(){
+//     health -= 1
+//     hits++
+//     update()
     
-}
-function kick(){
-    health -= 10
-    hits++
-    update()
+// }
+// function kick(){
+//     health -= 10
+//     hits++
+//     update()
 
-}
-function punch(){
-    health -= 5
-    hits++
-    update()
+// }
+// function punch(){
+//     health -= 5
+//     hits++
+//     update()
 
-}
+// }
 
 function attack(action){
     if(action === "slap"){
-        health
+        health -= 1
+    }if (action === "punch"){
+        health -= 5
+    }if (action === "kick"){
+        health -= 10
     }
+    hits++
+    update()
 }
 
 function update(){
