@@ -12,24 +12,46 @@
 
 
 </head>
-<body>
-    <header>
-        <!-- healthbar -->
-        <span>Health:<span id="health">--</span></span>
-        <span>Name: <span id="enemyName">--</span> </span>
-        <span>Hits: <span id="hits">--</span> </span>
+<body class="container-fluid">
+    <header class="row">
+        <div class="col-6">
+            <!-- healthbar -->
+            <span>Health:<span id="health">--</span></span>
+            <span>Name: <span id="enemyName">--</span> </span>
+            <span>Hits: <span id="hits">--</span> </span>
+        </div>
+        <div class="col-6">
+            <!-- healthbar -->
+            <span>Health:<span id="health">--</span></span>
+            <span>Name: <span id="enemyName">--</span> </span>
+            <span>Hits: <span id="hits">--</span> </span>
+        </div>
     </header>
 
-    <main>
-        <!-- target -->
-        <img src="//placehold.it/200x200" alt="//placehold.it/200x200">
+    <main class="row">
+        <div class="col-6">
+            <!-- target -->
+            <img src="//placehold.it/200x200" alt="//placehold.it/200x200">
+        </div>
+        <div class="col-6">
+            <!-- target -->
+            <img src="//placehold.it/200x200" alt="//placehold.it/200x200">
+        </div>
     </main>
 
-    <footer class="footer">
-        <!-- controls -->
-        <button type="button" class="btn btn-primary" onclick="attack('slap')">SLAP</button>
-        <button type="button" class="btn btn-primary" onclick="attack('punch')">PUNCH</button>
-        <button type="button" class="btn btn-primary" onclick="attack('kick')">KICK</button>
+    <footer class="row footer">
+        <div class="col-6">
+            <!-- controls -->
+            <button type="button" class="btn btn-primary" onclick="attack('slap')">SLAP</button>
+            <button type="button" class="btn btn-primary" onclick="attack('punch')">PUNCH</button>
+            <button type="button" class="btn btn-primary" onclick="attack('kick')">KICK</button>
+        </div>
+        <div class="col-6">
+            <!-- controls -->
+            <button type="button" class="btn btn-primary" onclick="attack('slap')">SLAP</button>
+            <button type="button" class="btn btn-primary" onclick="attack('punch')">PUNCH</button>
+            <button type="button" class="btn btn-primary" onclick="attack('kick')">KICK</button>
+        </div>
         
     </footer>
 
