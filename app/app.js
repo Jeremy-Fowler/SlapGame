@@ -2,7 +2,8 @@
 
 var health= 100;
 var enemyName = "person";
-let hits = 0
+let player1Hits = 0
+let player2Hits = 0
 var characters = {
 
     
@@ -12,7 +13,7 @@ var characters = {
         attacks: {
             kick: 20,
             punch: 15,
-            uppercut: 30,
+            shoryuken: 30,
             hadouken: 40
         },
         mobility: 35
@@ -24,7 +25,7 @@ var characters = {
         attacks: {
             kick: 15,
             punch: 10,
-            uppercut: 25,
+            shoryuken: 25,
             hadouken: 60
         },
         mobility: 55
@@ -53,21 +54,36 @@ var characters = {
 
 // }
 
-function attack(action){
+function player1Attack(action){
     if(action === "slap"){
-        ken.health -= 1
+        characters.ryu.health -= 1
     }if (action === "punch"){
-        ken.health -= 5
+        characters.ryu.health -= 5
     }if (action === "kick"){
-        ken.health -= 10
+        characters.ryu.health -= 10
     }
-    hits++
+    player1Hits++
+    update()
+}
+function player2Attack(action){
+    if(action === "slap"){
+        characters.ken.health -= 1
+    }if (action === "punch"){
+        characters.ken.health -= 5
+    }if (action === "kick"){
+        characters.ken.health -= 10
+    }
+    player2Hits++
     update()
 }
 
 function update(){
-    document.getElementById('health').innerText = ken.health
-    document.getElementById("enemyName").innerText = ken.name
-    document.getElementById("hits").innerText = hits
+    document.getElementById('player1Health').innerText = characters.ken.health.toString()
+    document.getElementById("player1Name").innerText = characters.ken.name
+    document.getElementById("player1Hits").innerText = player1Hits.toString()
+
+    document.getElementById('player2Health').innerText = characters.ryu.health.toString()
+    document.getElementById("player2Name").innerText = characters.ryu.name
+    document.getElementById("player2Hits").innerText = player2Hits.toString()
 }
 update()

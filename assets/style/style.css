@@ -1,0 +1,13 @@
+body{
+    background-image: url('https://pbs.twimg.com/media/EVLyO8VVAAIt1ru.jpg');
+    background-size: cover;
+    height: 100vh;
+}
+
+.rowHeight{
+    height: 70vh;
+}
+
+.flipImage{
+    transform: rotateY(180deg);
+}

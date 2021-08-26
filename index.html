@@ -14,43 +14,52 @@
 </head>
 <body class="container-fluid">
     <header class="row">
-        <div class="col-6">
+        <div class="col-5 d-flex flex-column bg-primary justify-content-start">
             <!-- healthbar -->
-            <span>Health:<span id="health">--</span></span>
-            <span>Name: <span id="enemyName">--</span> </span>
-            <span>Hits: <span id="hits">--</span> </span>
+            <h1>Health:<span id="player1Health">--</span></h1>
         </div>
-        <div class="col-6">
+        <div class="col-2 bg-secondary text-center justify-content-center">
+            <h1>VS</h1>
+        </div>
+        <div class="col-5 d-flex bg-primary justify-content-end">
             <!-- healthbar -->
-            <span>Health:<span id="health">--</span></span>
-            <span>Name: <span id="enemyName">--</span> </span>
-            <span>Hits: <span id="hits">--</span> </span>
+            <h1>Health: <span id="player2Health">--</span></h1>
         </div>
+        <div class="col-6 text-light">
+            <h1>Name: <span id="player1Name">--</span> </h1>
+            <h1>Hits: <span id="player1Hits">--</span> </h1>
+        </div>
+        <div class="col-6 d-flex align-items-end flex-column text-light ">
+            <h1>Name: <span id="player2Name">--</span> </h1>
+            <h1>Hits: <span id="player2Hits">--</span> </h1>
+        </div>
+
+        
     </header>
 
-    <main class="row">
-        <div class="col-6">
-            <!-- target -->
-            <img src="//placehold.it/200x200" alt="//placehold.it/200x200">
+    <main class="row d-flex align-items-end rowHeight">
+        <div class="col-6 d-flex justify-content-start align-items-end">
+            <!-- player1 -->
+            <img class="flipImage" src="https://cdn.wikimg.net/en/strategywiki/images/a/a4/SSF2T_Ken.gif" alt="//placehold.it/200x200">
         </div>
-        <div class="col-6">
-            <!-- target -->
-            <img src="//placehold.it/200x200" alt="//placehold.it/200x200">
+        <div class="col-6 d-flex justify-content-end align-items-end">
+            <!-- player2 -->
+            <img src="https://cdn.wikimg.net/en/strategywiki/images/6/65/SSF2T_Ryu.gif" alt="//placehold.it/200x200">
         </div>
     </main>
 
-    <footer class="row footer">
+    <footer class="row footer d-flex">
         <div class="col-6">
             <!-- controls -->
-            <button type="button" class="btn btn-primary" onclick="attack('slap')">SLAP</button>
-            <button type="button" class="btn btn-primary" onclick="attack('punch')">PUNCH</button>
-            <button type="button" class="btn btn-primary" onclick="attack('kick')">KICK</button>
+            <button type="button" class="btn rounded-circle btn-primary" onclick="player1Attack('slap')">SLAP</button>
+            <button type="button" class="btn rounded-circle btn-primary" onclick="player1Attack('punch')">PUNCH</button>
+            <button type="button" class="btn rounded-circle btn-primary" onclick="player1Attack('kick')">KICK</button>
         </div>
-        <div class="col-6">
+        <div class="col-6 d-flex justify-content-end">
             <!-- controls -->
-            <button type="button" class="btn btn-primary" onclick="attack('slap')">SLAP</button>
-            <button type="button" class="btn btn-primary" onclick="attack('punch')">PUNCH</button>
-            <button type="button" class="btn btn-primary" onclick="attack('kick')">KICK</button>
+            <button type="button" class="btn rounded-circle btn-primary" onclick="player2Attack('slap')">SLAP</button>
+            <button type="button" class="btn rounded-circle btn-primary" onclick="player2Attack('punch')">PUNCH</button>
+            <button type="button" class="btn rounded-circle btn-primary" onclick="player2Attack('kick')">KICK</button>
         </div>
         
     </footer>
