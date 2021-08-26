@@ -1,6 +1,6 @@
 // Global
 
-var health= 100;
+// var health= 100;
 var enemyName = "person";
 let player1Hits = 0
 let player2Hits = 0
@@ -10,24 +10,15 @@ var characters = {
     ken: {
         name: "Ken",
         health: 120,
-        attacks: {
-            kick: 20,
-            punch: 15,
-            shoryuken: 30,
-            hadouken: 40
-        },
+        special: "SHORYUKEN",
         mobility: 35
     },
     
     ryu: {
         name: "Ryu",
         health: 100,
-        attacks: {
-            kick: 15,
-            punch: 10,
-            shoryuken: 25,
-            hadouken: 60
-        },
+        special: 'HADOUKEN',
+    
         mobility: 55
     },
 }
@@ -59,7 +50,7 @@ function player1Attack(action){
         characters.ryu.health -= 1
     }if (action === "punch"){
         characters.ryu.health -= 5
-    }if (action === "kick"){
+    }if (action === "special"){
         characters.ryu.health -= 10
     }
     player1Hits++
@@ -70,20 +61,57 @@ function player2Attack(action){
         characters.ken.health -= 1
     }if (action === "punch"){
         characters.ken.health -= 5
-    }if (action === "kick"){
-        characters.ken.health -= 10
+    }if (action === "special"){
+        characters.ken.health -= 15
     }
     player2Hits++
     update()
+}
+
+function depleteHealthBar(){
+    
+}
+
+function playerWins(){
+    if (characters.ryu.health <= 0){
+        Swal.fire({
+            title: 'KEN WINS!',
+            text: 'Go home and be a family man',
+            imageUrl: 'https://s3.getstickerpack.com/storage/uploads/sticker-pack/street-fighter-ii/sticker_16.png?353dcca039ddfedacfe541638970c0fd&d=200x200',
+            imageWidth: 400,
+            imageHeight: 400,
+            imageAlt: 'Custom image',
+          })
+        characters.ryu.health = 100
+        characters.ken.health = 120
+        update()  
+    }else if(characters.ken.health <=0){
+        // @ts-ignore
+        Swal.fire({
+            title: 'RYU WINS!',
+            text: 'Go home and be a family man',
+            imageUrl: 'https://s3.getstickerpack.com/storage/uploads/sticker-pack/street-fighter-ii/sticker_18.png?353dcca039ddfedacfe541638970c0fd&d=200x200',
+            imageWidth: 400,
+            imageHeight: 400,
+            imageAlt: 'Custom image',
+          })
+        characters.ryu.health = 100
+        characters.ken.health = 120
+        update() 
+    }
+      
 }
 
 function update(){
     document.getElementById('player1Health').innerText = characters.ken.health.toString()
     document.getElementById("player1Name").innerText = characters.ken.name
     document.getElementById("player1Hits").innerText = player1Hits.toString()
+    document.getElementById("player1Special").innerText = characters.ken.special
 
     document.getElementById('player2Health').innerText = characters.ryu.health.toString()
     document.getElementById("player2Name").innerText = characters.ryu.name
     document.getElementById("player2Hits").innerText = player2Hits.toString()
+    document.getElementById("player2Special").innerText = characters.ryu.special
+    playerWins()
 }
 update()
