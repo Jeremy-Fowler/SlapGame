@@ -69,7 +69,7 @@ function player2Attack(action){
 }
 
 function depleteHealthBar(){
-    
+
 }
 
 function playerWins(){
@@ -113,5 +113,21 @@ function update(){
     document.getElementById("player2Hits").innerText = player2Hits.toString()
     document.getElementById("player2Special").innerText = characters.ryu.special
     playerWins()
+    if(characters.ryu.health <= 50){
+      document.getElementById('player2Health').style.width = '50%';   
+     document.getElementById('player2Health').classList.add('bg-danger') 
+     }
+
+        else{document.getElementById('player2Health').style.width = '100%' 
+        document.getElementById('player2Health').classList.remove('bg-danger')
+    }
+    if(characters.ken.health <= 50){
+      document.getElementById('player1Health').style.width = '50%';   
+     document.getElementById('player1Health').classList.add('bg-danger') 
+     }
+
+        else{document.getElementById('player1Health').style.width = '100%' 
+        document.getElementById('player1Health').classList.remove('bg-danger')
+    }
 }
 update()

@@ -11,3 +11,6 @@ body{
 .flipImage{
     transform: rotateY(180deg);
 }
+.cool-font{
+    font-family: 'Press Start 2P', cursive;
+}
